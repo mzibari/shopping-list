@@ -1,8 +1,8 @@
-$(function (){
-    $("#js-shopping-list-form").submit(event => {
-        event.preventDefault();
-        const newItem = $(this).find('input[name=shopping-list-entry]').val();
-        $('.shopping-list').append(`<li>\
+$(function () {
+  $("#js-shopping-list-form").submit(event => {
+    event.preventDefault();
+    const newItem = $(this).find('input[name=shopping-list-entry]').val();
+    $('.shopping-list').append(`<li>\
             <span class="shopping-item">${newItem}</span>\
             <div class="shopping-item-controls">\
               <button class="shopping-item-toggle">\
@@ -13,13 +13,12 @@ $(function (){
               </button>\
             </div>\
           </li>`);
+  });//end of the shopping list submit function
 
+  $('ul').on('click', 'button[class="shopping-item-delete"]', function (event) {
+    this.closest('li').remove();
 
-
-
-    });//end of the shopping list submit function
-
-
+  });//end of delete function
 
 
 });//end of the main function
