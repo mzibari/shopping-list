@@ -14,11 +14,18 @@ $(function () {
             </div>\
           </li>`);
   });//end of the shopping list submit function
+  
+
+  $('ul').on('click', 'button[class="shopping-item-toggle"]', function (event) {
+    $(this).closest('li').find('span.shopping-item').toggleClass(' shopping-item__checked');
+
+  });//end of check function
 
   $('ul').on('click', 'button[class="shopping-item-delete"]', function (event) {
-    this.closest('li').remove();
+    $(this).closest('li').remove();
 
   });//end of delete function
+
 
 
 });//end of the main function
